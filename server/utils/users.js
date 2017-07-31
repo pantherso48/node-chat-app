@@ -8,14 +8,12 @@ class Users {
     return user;
   }
   removeUser (id) {
-    console.log('before', this.users);
     var userRemove = this.users.filter((user) => user.id === id)[0];
     this.users=this.users.filter((user) => user.id !== id);
-    console.log('after', this.users);
     return userRemove;
   }
   getUser(id) {
-    return this.users.filter((user) => user.id === id);
+    return this.users.filter((user) => user.id === id)[0];
   }
   getUserList(room) {
     var users = this.users.filter((user) => user.room === room);

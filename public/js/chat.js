@@ -75,7 +75,9 @@ jQuery('#message-form').on('submit', function(e){
   socket.emit('createMessage', {
     from: params.name,
     text: getMessageTextbox.val()
-  }, function () {
+  },
+  params,
+  function () {
     //clearing out message field after user submits
     getMessageTextbox.val('');
   });
